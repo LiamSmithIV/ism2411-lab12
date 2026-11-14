@@ -85,3 +85,10 @@ with open(SALES_FILE, newline="") as f:
         summary[product] = summary.get(product, 0) + line_total
 for product in sorted(summary):
     print(f"{product}: ${summary[product]:.2f}")
+
+# Exercise 8
+print("\n=== Exercise 8: Append to run log ===")
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+with open(LOG_FILE, "a") as log:
+    log.write(f"{timestamp} | Total revenue: ${total_revenue:.2f}\n")
+print(f"Logged this run to {LOG_FILE}")
