@@ -1,6 +1,13 @@
+# ISM2411 Lab 12 — Read a Sales CSV, Write a Cleaned Report
+# Name: Liam Smith 
+#
+# Reflection 1:
+# Python is better because of its repeatability. Once the script is written, it can be reused the next day with just one command. 
+# Python also allows for handling much larger files than Excel. Furthermore, Python prevents the redoing of filters and formulas necessary in Excel. 
+# Excel can be better because you can see all data at once and is more friendly to those without coding knowledge. 
 
-
-
+# Reflection 2:
+# A company could use a script to track daily sales and then total revenue. Then, add one line to a log with the date and new total. Append is the right tool because you can see the history/log of the dates and see if any date is missing.  
 
 import csv
 from datetime import datetime
@@ -9,8 +16,13 @@ SALES_FILE = "data/sales.csv"
 CLEANED_FILE = "data/cleaned.csv"
 LOG_FILE = "data/run_log.txt"
 
+# Exercise 1
+print("=== Exercise 1: File check ===")
+with open(SALES_FILE, newline="") as f:
+    print(f"{SALES_FILE} opened successfully")
+
 # Exercise 2
-print("=== Exercise 2: Raw rows ===")
+print("\n=== Exercise 2: Raw rows ===")
 with open(SALES_FILE, newline="") as f:
     reader = csv.reader(f)
     for row in reader:
